@@ -7,12 +7,14 @@ export const DISCORD_LINK = "https://discord.gg/K6X79nHqRH"; // Your Discord lin
 // --- CONFIGURATION ---
 // Edit this value to set a static key for everyone. 
 // If you leave it empty (""), a random key for each user.
-export const FREE_TRIAL_KEY = "F1LTHY-FREE";
+export const FREE_TRIAL_KEY = "";
 
-// Helper to get ISO string for 'hours ago'
-const minsAgo = (m: number) => new Date(Date.now() - m * 60 * 1000).toISOString();
-const hoursAgo = (h: number) => new Date(Date.now() - h * 60 * 60 * 1000).toISOString();
-const daysAgo = (d: number) => new Date(Date.now() - d * 24 * 60 * 60 * 1000).toISOString();
+// Helper to get ISO string for 'hours ago' - USED FOR INITIALIZATION ONLY
+// In a real app, you would replace these function calls below with the actual static ISO strings
+// so they don't reset every time the page loads.
+// const minsAgo = (m: number) => new Date(Date.now() - m * 60 * 1000).toISOString();
+// const hoursAgo = (h: number) => new Date(Date.now() - h * 60 * 60 * 1000).toISOString();
+// const daysAgo = (d: number) => new Date(Date.now() - d * 24 * 60 * 60 * 1000).toISOString();
 
 export const PRODUCTS: Product[] = [
   {
@@ -20,7 +22,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX INTERNAL PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: hoursAgo(1),
+    lastUpdated: "2026-01-01T09:06:00.000Z", // Fixed: 1 hour ago
     version: 'v2.4.0',
     downloadUrl: 'https://www.dropbox.com/scl/fi/vy2tk3tluji8sevy4mb5y/REAL-XITER.rar?dl=1',
     requirementUrl: 'https://mega.nz/file/7d9TXaxb#Bon-yyPkSpi7ZyXfstgkW3CfL287jlRCdPYm2M-w5DQ',
@@ -77,7 +79,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX EXTERNAL PANEL',
     category: 'Panel',
     status: StatusState.UPDATING,
-    lastUpdated: new Date().toISOString(), // Just updated now
+    lastUpdated: "2026-01-01T10:06:00.000Z", // Fixed: Just now
     version: 'v1.0.5',
     downloadUrl: 'https://example.com/download',
     requirementUrl: 'https://example.com/drivers',
@@ -109,7 +111,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX LITE PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: hoursAgo(5),
+    lastUpdated: "2026-01-01T05:06:00.000Z", // Fixed: 5 hours ago
     version: 'v0.9.8',
     description: 'Lightweight and fast panel focusing on core essentials.',
     youtubeVideoId: 'dummy_video_3',
@@ -131,7 +133,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX PRO PANEL',
     category: 'Panel',
     status: StatusState.TESTING,
-    lastUpdated: minsAgo(10), // 10 mins ago
+    lastUpdated: "2026-01-01T09:56:00.000Z", // Fixed: 10 mins ago
     version: 'v3.0.1',
     description: 'Professional grade panel with experimental features under testing.',
     youtubeVideoId: 'dummy_video_4',
@@ -153,7 +155,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX MOBILE PANEL',
     category: 'Mobile',
     status: StatusState.UNDETECTED,
-    lastUpdated: hoursAgo(2),
+    lastUpdated: "2026-01-01T08:06:00.000Z", // Fixed: 2 hours ago
     version: 'v1.2.0',
     description: 'Optimized internal panel for mobile emulators and native support.',
     youtubeVideoId: 'dummy_video_5',
@@ -175,7 +177,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX BYPASS PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: daysAgo(1),
+    lastUpdated: "2025-12-31T10:06:00.000Z", // Fixed: 1 day ago
     version: 'v4.0.0',
     description: 'High-level kernel bypass for maximum security.',
     youtubeVideoId: 'dummy_video_6',
@@ -197,7 +199,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX ESP ONLY',
     category: 'Visuals',
     status: StatusState.UNDETECTED,
-    lastUpdated: hoursAgo(4),
+    lastUpdated: "2026-01-01T06:06:00.000Z", // Fixed: 4 hours ago
     version: 'v1.1.1',
     description: 'Dedicated visual-only panel for streamers and closet players.',
     youtubeVideoId: 'dummy_video_7',
@@ -219,7 +221,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX AIM PANEL',
     category: 'Combat',
     status: StatusState.DETECTED,
-    lastUpdated: hoursAgo(12),
+    lastUpdated: "2026-01-01T22:06:00.000Z", // Fixed: 12 hours ago (Previous day effectively)
     version: 'v2.2.0',
     description: 'Focused combat panel. Currently undergoing maintenance.',
     youtubeVideoId: 'dummy_video_8',
