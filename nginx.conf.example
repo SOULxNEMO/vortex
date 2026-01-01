@@ -1,0 +1,25 @@
+server {
+    listen 80;
+    # Replace with your actual domain name or IP address
+    server_name example.com www.example.com;
+
+    # Point this to where you copy the 'dist' folder on your server
+    root /var/www/ace-x-vortex;
+    index index.html;
+
+    # Gzip settings for better performance
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    location / {
+        # This is critical for React/Vite Single Page Apps
+        # If the file isn't found, serve index.html
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Optional: Cache static assets for 1 year
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+        expires 1y;
+        add_header Cache-Control "public, no-transform";
+    }
+}
