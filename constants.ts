@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX INTERNAL PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: "2026-01-01T09:06:00.000Z", // Fixed: 1 hour ago
+    lastUpdated: "2026-01-01T04:40:00.000Z", // Fixed: 1 hour ago
     version: 'v2.4.0',
     downloadUrl: 'https://www.dropbox.com/scl/fi/vy2tk3tluji8sevy4mb5y/REAL-XITER.rar?dl=1',
     requirementUrl: 'https://mega.nz/file/7d9TXaxb#Bon-yyPkSpi7ZyXfstgkW3CfL287jlRCdPYm2M-w5DQ',
