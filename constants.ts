@@ -10,6 +10,7 @@ export const DISCORD_LINK = "https://discord.gg/K6X79nHqRH"; // Your Discord lin
 export const FREE_TRIAL_KEY = "F1LTHY-FREE";
 
 // Helper to get ISO string for 'hours ago'
+const minsAgo = (m: number) => new Date(Date.now() - m * 60 * 1000).toISOString();
 const hoursAgo = (h: number) => new Date(Date.now() - h * 60 * 60 * 1000).toISOString();
 const daysAgo = (d: number) => new Date(Date.now() - d * 24 * 60 * 60 * 1000).toISOString();
 
@@ -130,7 +131,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX PRO PANEL',
     category: 'Panel',
     status: StatusState.TESTING,
-    lastUpdated: hoursAgo(0.2), // 12 mins ago
+    lastUpdated: minsAgo(10), // 10 mins ago
     version: 'v3.0.1',
     description: 'Professional grade panel with experimental features under testing.',
     youtubeVideoId: 'dummy_video_4',
