@@ -9,13 +9,17 @@ export const DISCORD_LINK = "https://discord.gg/K6X79nHqRH"; // Your Discord lin
 // If you leave it empty (""), a random key for each user.
 export const FREE_TRIAL_KEY = "F1LTHY-FREE";
 
+// Helper to get ISO string for 'hours ago'
+const hoursAgo = (h: number) => new Date(Date.now() - h * 60 * 60 * 1000).toISOString();
+const daysAgo = (d: number) => new Date(Date.now() - d * 24 * 60 * 60 * 1000).toISOString();
+
 export const PRODUCTS: Product[] = [
   {
     id: 'internal_panel',
     name: 'ACE X VORTEX INTERNAL PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: '1 hour ago',
+    lastUpdated: hoursAgo(1),
     version: 'v2.4.0',
     downloadUrl: 'https://www.dropbox.com/scl/fi/vy2tk3tluji8sevy4mb5y/REAL-XITER.rar?dl=1',
     requirementUrl: 'https://mega.nz/file/7d9TXaxb#Bon-yyPkSpi7ZyXfstgkW3CfL287jlRCdPYm2M-w5DQ',
@@ -72,13 +76,13 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX EXTERNAL PANEL',
     category: 'Panel',
     status: StatusState.UPDATING,
-    lastUpdated: '3 hours ago',
+    lastUpdated: new Date().toISOString(), // Just updated now
     version: 'v1.0.5',
     downloadUrl: 'https://example.com/download',
     requirementUrl: 'https://example.com/drivers',
     recommendedEmulatorUrl: 'https://example.com/emulator',
     cleanEmulatorUrl: 'https://example.com/clean-emulator',
-    description: 'The advanced external soqlution for ultimate performance and invisibility.',
+    description: 'The advanced external solution for ultimate performance and invisibility.',
     youtubeVideoId: 'dummy_video_id',
     features: [
       { name: "Vis Check", status: 'SAFE' },
@@ -104,7 +108,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX LITE PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: '5 hours ago',
+    lastUpdated: hoursAgo(5),
     version: 'v0.9.8',
     description: 'Lightweight and fast panel focusing on core essentials.',
     youtubeVideoId: 'dummy_video_3',
@@ -126,7 +130,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX PRO PANEL',
     category: 'Panel',
     status: StatusState.TESTING,
-    lastUpdated: '10 mins ago',
+    lastUpdated: hoursAgo(0.2), // 12 mins ago
     version: 'v3.0.1',
     description: 'Professional grade panel with experimental features under testing.',
     youtubeVideoId: 'dummy_video_4',
@@ -148,7 +152,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX MOBILE PANEL',
     category: 'Mobile',
     status: StatusState.UNDETECTED,
-    lastUpdated: '2 hours ago',
+    lastUpdated: hoursAgo(2),
     version: 'v1.2.0',
     description: 'Optimized internal panel for mobile emulators and native support.',
     youtubeVideoId: 'dummy_video_5',
@@ -170,7 +174,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX BYPASS PANEL',
     category: 'Panel',
     status: StatusState.UNDETECTED,
-    lastUpdated: '1 day ago',
+    lastUpdated: daysAgo(1),
     version: 'v4.0.0',
     description: 'High-level kernel bypass for maximum security.',
     youtubeVideoId: 'dummy_video_6',
@@ -192,7 +196,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX ESP ONLY',
     category: 'Visuals',
     status: StatusState.UNDETECTED,
-    lastUpdated: '4 hours ago',
+    lastUpdated: hoursAgo(4),
     version: 'v1.1.1',
     description: 'Dedicated visual-only panel for streamers and closet players.',
     youtubeVideoId: 'dummy_video_7',
@@ -214,7 +218,7 @@ export const PRODUCTS: Product[] = [
     name: 'ACE X VORTEX AIM PANEL',
     category: 'Combat',
     status: StatusState.DETECTED,
-    lastUpdated: '12 hours ago',
+    lastUpdated: hoursAgo(12),
     version: 'v2.2.0',
     description: 'Focused combat panel. Currently undergoing maintenance.',
     youtubeVideoId: 'dummy_video_8',

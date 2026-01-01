@@ -3,6 +3,7 @@ import React from 'react';
 import { Product } from '../types';
 import { STATUS_CONFIG } from '../constants';
 import { Tag, Clock, List, Play, ChevronRight } from 'lucide-react';
+import { timeAgo } from '../utils/date';
 
 interface DashboardCardProps {
     product: Product;
@@ -41,7 +42,7 @@ const DashboardCard: React.FC<DashboardCardProps & { index?: number }> = ({ prod
                             </div>
                             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/30 text-zinc-500 text-[10px] uppercase font-bold tracking-wider font-mono">
                                 <Clock size={12} />
-                                {product.lastUpdated}
+                                {timeAgo(product.lastUpdated)}
                             </div>
                         </div>
 
