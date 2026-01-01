@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Product } from '../types';
 import { STATUS_CONFIG } from '../constants';
 import { Download, Play, List, ChevronDown, ChevronUp, FileText, Monitor, Smartphone, Clock, Tag, Bell } from 'lucide-react';
-import { timeAgo } from '../utils/date';
+import { useTimeAgo } from '../utils/date';
 import AuthModal from './AuthModal';
 
 interface StatusRowProps {
@@ -62,7 +62,7 @@ const StatusRow: React.FC<StatusRowProps> = ({ product, id, isFeaturesOpen, onTo
                             </div>
                             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-500 text-[10px] uppercase font-bold tracking-wider font-mono">
                                 <Clock size={12} />
-                                Updated {timeAgo(product.lastUpdated)}
+                                Updated {useTimeAgo(product.lastUpdated)}
                             </div>
                         </div>
 
